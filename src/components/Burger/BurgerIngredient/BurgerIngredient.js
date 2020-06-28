@@ -4,7 +4,7 @@ import styles from './BurgerIngredient.module.css';
 
 class BurgerIngredient extends Component{
     render() {
-        let ingredients = null; //null because we won't render anything if something invalid is passed
+        let ingredient = null; //null because we won't render anything if something invalid is passed
 
             switch (this.props.type) {
             case('bread-bottom'):
