@@ -16,7 +16,8 @@ import BuildControl from './BuildControl/BuildControl';
                     key = {ctrl.label}
                     label ={ctrl.label}
                     add = {() => props.addedIngredients(ctrl.type)}
-                    deleted = {() => props.deletedIngredients(ctrl.type)}/>
+                    deleted = {() => props.deletedIngredients(ctrl.type)}
+                    disabled = {props.disable[ctrl.type]}/>
                 ))
             }
 
