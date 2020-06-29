@@ -15,7 +15,8 @@ import BuildControl from './BuildControl/BuildControl';
                     <BuildControl
                     key = {ctrl.label}
                     label ={ctrl.label}
-                    add = {() => props.addedIngredients(ctrl.type)}/>
+                    add = {() => props.addedIngredients(ctrl.type)}
+                    deleted = {() => props.deletedIngredients(ctrl.type)}/>
                 ))
             }
 
