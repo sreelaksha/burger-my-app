@@ -18,6 +18,8 @@ import Aux from '../../../hoc/Aux';
                     {ingredientsSummary}
                 </ul>
                 <p> Continue to Checkout.. </p>
+                <button> CANCEL </button>
+                <button> CONTINUE </button>
             </Aux>
         );
     }
