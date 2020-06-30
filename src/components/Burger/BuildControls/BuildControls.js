@@ -18,10 +18,11 @@ import BuildControl from './BuildControl/BuildControl';
                     label ={ctrl.label}
                     add = {() => props.addedIngredients(ctrl.type)}
                     deleted = {() => props.deletedIngredients(ctrl.type)}
-                    disabled = {props.disable[ctrl.type]}/>
+                    disabled = {props.disable[ctrl.type]}
+                    />
                 ))
             }
-
+        <button className = {styles.OrderButton} disabled = {!props.purchasable}> ORDER NOW </button>
         </div>
     );
 
