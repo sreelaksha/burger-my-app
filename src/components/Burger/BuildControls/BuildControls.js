@@ -22,7 +22,10 @@ import BuildControl from './BuildControl/BuildControl';
                     />
                 ))
             }
-        <button className = {styles.OrderButton} disabled = {!props.purchasable}> ORDER NOW </button>
+        <button
+            className = {styles.OrderButton}
+            onClick = {props.ordered}
+            disabled = {!props.purchasable}> ORDER NOW </button>
         </div>
     );
 
