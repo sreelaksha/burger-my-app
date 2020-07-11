@@ -1,9 +1,10 @@
 import React from 'react';
+
 import styles from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const burger = (props) => {
-    let transformedIngredients = Object.keys(props.ingredients)
+   let transformedIngredients = Object.keys(props.ingredients)
         .map(item => {
                 //console.log(item);
             return [...Array(props.ingredients[item])].map((__, i) => {
