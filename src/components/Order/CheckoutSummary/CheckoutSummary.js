@@ -12,11 +12,11 @@ const checkoutSummary = (props) => {
                     <Burger ingredients = {props.ingredients}/>
                     <Button
                         btnType = "Success"
-                        clicked> CONTINUE
+                        clicked ={props.checkoutContinue}> CONTINUE
                     </Button>
                     <Button
                         btnType = "Danger"
-                        clicked> CANCEL
+                        clicked = {props.checkoutCancelled}> CANCEL
                     </Button>
                 </div>
             </div>
