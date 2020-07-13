@@ -37,6 +37,7 @@ import styles from './ContactData.module.css';
                         axios.post('/orders.json ' , order)
                             .then (response =>{
                                   this.setState({ loading : false })
+                                  this.props.history.replace('/');
                             })
                             .catch (error => {
                                   this.setState({ loading : false })
