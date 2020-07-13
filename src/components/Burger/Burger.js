@@ -8,7 +8,7 @@ const burger = (props) => {
         .map(item => {
                 //console.log(item);
             return [...Array(props.ingredients[item])].map((__, i) => {
-               //console.log(props.ingredients[items]);
+               //console.log(props.ingredients[item]);
               // console.log(item+i);// blank element
               //  console.log(props.ingredients[item]);//index of element
                 return <BurgerIngredient key={item+i} type={item} />
