@@ -2,6 +2,7 @@ import React , { Component } from 'react';
 import axios from '../../../axios-orders';
 
 import Button from '../../../components/UI/Button/Button';
+import Spinner from '../../../components/UI/Spinner/Spinner';
 import styles from './ContactData.module.css';
 
 //import Checkout from '../Checkout';
@@ -44,16 +45,23 @@ import styles from './ContactData.module.css';
 
     render(){
 
+        let form = (
+            <form>
+                    <input className = {styles.Input} type = 'text' name= 'name' placeholder = 'Your name'/>
+                    <input className = {styles.Input} type = 'email' name= 'email' placeholder = 'Your email'/>
+                    <input className = {styles.Input} type = 'text' name= 'street' placeholder = 'Street'/>
+                    <input className = {styles.Input} type = 'text' name= 'postalCode' placeholder = 'Postal Code'/>
+                    <Button btnType = "Success" clicked = {this.orderConfirmedHandler} > ORDER </Button>
+            </form>
+        );
+        if(this.state.loading){
+           form = <Spinner />
+        }
+
         return(
                 <div className = {styles.ContactData}>
                     <h3> Enter your contact data </h3>
-                    <form>
-                        <input className = {styles.Input} type = 'text' name= 'name' placeholder = 'Your name'/>
-                        <input className = {styles.Input} type = 'email' name= 'email' placeholder = 'Your email'/>
-                        <input className = {styles.Input} type = 'text' name= 'street' placeholder = 'Street'/>
-                        <input className = {styles.Input} type = 'text' name= 'postalCode' placeholder = 'Postal Code'/>
-                        <Button btnType = "Success" clicked = {this.orderConfirmedHandler} > ORDER </Button>
-                    </form>
+                    {form}
                 </div>
 
         );
