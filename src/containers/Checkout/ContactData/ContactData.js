@@ -14,6 +14,11 @@ import styles from './ContactData.module.css';
             }
         }
 
+     orderConfirmedHandler = (event) =>{
+            event.preventDefault();
+            console.log(this.props.ingredients);
+     }
+
     render(){
         return(
                 <div className = {styles.ContactData}>
@@ -23,7 +28,7 @@ import styles from './ContactData.module.css';
                         <input className = {styles.Input} type = 'email' name= 'email' placeholder = 'Your email'/>
                         <input className = {styles.Input} type = 'text' name= 'street' placeholder = 'Street'/>
                         <input className = {styles.Input} type = 'text' name= 'postalCode' placeholder = 'Postal Code'/>
-                        <Button btnType = "Success"> ORDER </Button>
+                        <Button btnType = "Success" clicked = {this.orderConfirmedHandler} > ORDER </Button>
                     </form>
                 </div>
 
