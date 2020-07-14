@@ -46,7 +46,7 @@ import Input from '../../../components/UI/Input/Input';
                         deliveryMethod: {
                                 elementType: 'select',
                                 elementConfig: {
-                                    option: [
+                                    options: [
                                         {value: 'fastest', displayValue: 'Fastest'},
                                         {value: 'cheapest', displayValue: 'Cheapest'}
                                         ]
@@ -57,7 +57,7 @@ import Input from '../../../components/UI/Input/Input';
             loading: false
         }
 
-     orderConfirmedHandler = (event) =>{
+     orderConfirmedHandler = (event) => {
             event.preventDefault();
             this.setState({loading : true})
                        const order = {
