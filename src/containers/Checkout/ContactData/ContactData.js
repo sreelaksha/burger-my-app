@@ -49,10 +49,10 @@ import Input from '../../../components/UI/Input/Input';
 
         let form = (
             <form>
-                    <Input inputType ="input" type = 'text' name= 'name' placeholder = 'Your name'/>
-                    <Input inputType = "input" type = 'email' name= 'email' placeholder = 'Your email'/>
-                    <Input inputType = "input" type = 'text' name= 'street' placeholder = 'Street'/>
-                    <Input inputType= "input" type = 'text' name= 'postalCode' placeholder = 'Postal Code'/>
+                    <Input inputtype ="input" type = 'text' name= 'name' placeholder = 'Your name'/>
+                    <Input inputtype = "input" type = 'email' name= 'email' placeholder = 'Your email'/>
+                    <Input inputtype = "input" type = 'text' name= 'street' placeholder = 'Street'/>
+                    <Input inputtype= "input" type = 'text' name= 'postalCode' placeholder = 'Postal Code'/>
                     <Button btnType = "Success" clicked = {this.orderConfirmedHandler} > ORDER </Button>
             </form>
         );

@@ -5,7 +5,7 @@ const input = (props) => {
 
     let inputElement = null;
 
-    switch(props.inputType){
+    switch(props.inputtype){
         case('input'):
             inputElement = <input className = {styles.InputElement}  {...props}/>;
             break;
@@ -15,7 +15,6 @@ const input = (props) => {
         default:
             inputElement = <input lassName = {styles.InputElement} {...props} />;
      }
-
 
     return(
         <div className = {styles.Input}>
