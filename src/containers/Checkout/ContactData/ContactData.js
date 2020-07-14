@@ -17,7 +17,11 @@ import Input from '../../../components/UI/Input/Input';
                                 type: 'text',
                                 placeholder: 'Your Name'
                             },
-                            value: ''
+                            value: '',
+                            validation: {
+                                required: true,
+                            },
+                            valid: false,
                         },
                         email : {
                                 elementType: 'input',
@@ -25,7 +29,11 @@ import Input from '../../../components/UI/Input/Input';
                                     type: 'text',
                                     placeholder: 'Your Email'
                                 },
-                                value: ''
+                                value: '',
+                                    validation: {
+                                        required: true,
+                                    },
+                                    valid: false,
                             },
                         street:{
                                elementType: 'input',
@@ -33,7 +41,11 @@ import Input from '../../../components/UI/Input/Input';
                                    type: 'text',
                                    placeholder: 'Street'
                                },
-                               value: ''
+                               value: '',
+                                    validation: {
+                                        required: true,
+                                    },
+                                    valid: false,
                            },
                         zipCode: {
                                  elementType: 'input',
@@ -41,8 +53,12 @@ import Input from '../../../components/UI/Input/Input';
                                      type: 'text',
                                      placeholder: 'Zip Code'
                                  },
-                                 value: ''
-                             },
+                                 value: '',
+                                    validation: {
+                                        required: true,
+                                    },
+                                    valid: false,
+                            },
                         deliveryMethod: {
                                 elementType: 'select',
                                 elementConfig: {
@@ -56,6 +72,15 @@ import Input from '../../../components/UI/Input/Input';
                      },
             loading: false
         }
+
+    checkValidity(value, rules){
+        let isValid = false;
+
+        if(rules.required){
+            isValid = value.trim() !== '';
+        }
+        return isValid;
+    }
 
      orderConfirmedHandler = (event) => {
             event.preventDefault();
@@ -90,6 +115,8 @@ import Input from '../../../components/UI/Input/Input';
                 };
                 //console.log(updatedFormItems);
                 updatedFormElement.value = event.target.value;
+                updatedFormElement.valid = this.checkValidity(updatedFormElement.value , updatedFormElement.validation )
+                console.log(updatedFormElement);
                 updatedOrderForm[inputIdentifier] = updatedFormElement ;
                 this.setState({orderForm: updatedOrderForm})
      }
