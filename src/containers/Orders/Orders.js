@@ -15,16 +15,14 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
                 .then(response => {
                     const fetchedOrders= [];
                     for(let key in response.data){
-                                console.log('Key:'+ key);
-                                console.log('Response-data :'+ response.data)
-                       fetchedOrders.push({
+                        fetchedOrders.push({
                            ...response.data[key],
                            id: key
                        });
-                       console.log('response-data-key' +response.data[key]);
+                       //console.log('response-data-key' +response.data[key]);
                     }
-                       console.log('fetchedOrders:'+ fetchedOrders);
-                       console.log(response.data);
+                       //console.log('fetchedOrders:'+ fetchedOrders);
+                       //console.log(response.data);
 
                        this.setState({loading: false, orders: fetchedOrders});
                 })
@@ -38,8 +36,13 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
             return(
                 <div>
-                    <Order />
-                    <Order />
+                    {this.state.orders.map(order => (
+                            <Order
+                                key = {order.id}
+                                ingredients = {order.ingredients}
+                                price = {+order.price}
+                                />
+                     ))}
                 </div>
             );
         }
