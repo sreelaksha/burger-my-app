@@ -22,6 +22,7 @@ import Input from '../../../components/UI/Input/Input';
                                 required: true,
                             },
                             valid: false,
+                            touched: false
                         },
                         email : {
                                 elementType: 'input',
@@ -34,6 +35,7 @@ import Input from '../../../components/UI/Input/Input';
                                         required: true,
                                     },
                                     valid: false,
+                                    touched: false
                             },
                         street:{
                                elementType: 'input',
@@ -46,6 +48,7 @@ import Input from '../../../components/UI/Input/Input';
                                         required: true,
                                     },
                                     valid: false,
+                                    touched: false
                            },
                         zipCode: {
                                  elementType: 'input',
@@ -60,6 +63,8 @@ import Input from '../../../components/UI/Input/Input';
                                         maxLength : 5,
                                     },
                                     valid: false,
+                                    touched: false
+
                             },
                         deliveryMethod: {
                                 elementType: 'select',
@@ -124,6 +129,7 @@ import Input from '../../../components/UI/Input/Input';
                 //console.log(updatedFormItems);
                 updatedFormElement.value = event.target.value;
                 updatedFormElement.valid = this.checkValidity(updatedFormElement.value , updatedFormElement.validation )
+                updatedFormElement.touched = true;
                 console.log(updatedFormElement);
                 updatedOrderForm[inputIdentifier] = updatedFormElement ;
                 this.setState({orderForm: updatedOrderForm})
@@ -148,6 +154,7 @@ import Input from '../../../components/UI/Input/Input';
                             value = {formElement.config.value}
                             invalid= {!formElement.config.valid}
                             shouldValidate = {formElement.config.validation}
+                            touched = {formElement.config.touched}
                             changed = {(event) => this.inputChangeHandler(event, formElement.id)}/>
                     ))}
                     <Button btnType = "Success" > ORDER </Button>
