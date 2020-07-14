@@ -15,15 +15,15 @@ import Input from '../../../components/UI/Input/Input';
                             elementType: 'input',
                             elementConfig: {
                                 type: 'text',
-                                placeholder: 'Your Name',
+                                placeholder: 'Your Name'
                             },
-                            value: '',
+                            value: ''
                         },
                         email : {
                                 elementType: 'input',
                                 elementConfig: {
                                     type: 'text',
-                                    placeholder: 'Your Email',
+                                    placeholder: 'Your Email'
                                 },
                                 value: ''
                             },
@@ -31,7 +31,7 @@ import Input from '../../../components/UI/Input/Input';
                                elementType: 'input',
                                elementConfig: {
                                    type: 'text',
-                                   placeholder: 'Street',
+                                   placeholder: 'Street'
                                },
                                value: ''
                            },
@@ -39,7 +39,7 @@ import Input from '../../../components/UI/Input/Input';
                                  elementType: 'input',
                                  elementConfig: {
                                      type: 'text',
-                                     placeholder: 'Zip Code',
+                                     placeholder: 'Zip Code'
                                  },
                                  value: ''
                              },
@@ -76,13 +76,22 @@ import Input from '../../../components/UI/Input/Input';
      }
 
     render(){
+        const formElementArray = [];
+        for(let key in this.state.orderForm){
+            formElementArray.push({
+                id: key,
+                config : this.state.orderForm[key]
+            });
+        }
 
         let form = (
             <form>
-                    <Input elementType = " " elementConfig = " " value = " "/>
-                    <Input inputtype = "input" type = 'email' name= 'email' placeholder = 'Your email'/>
-                    <Input inputtype = "input" type = 'text' name= 'street' placeholder = 'Street'/>
-                    <Input inputtype= "input" type = 'text' name= 'postalCode' placeholder = 'Postal Code'/>
+                    {formElementArray.map(formElement => (
+                       <Input
+                            elementType = {formElement.config.elementType}
+                            elementConfig = {formElement.config.elementConfig}
+                            value = {formElement.config.value} />
+                    ))}
                     <Button btnType = "Success" clicked = {this.orderConfirmedHandler} > ORDER </Button>
             </form>
         );
@@ -98,6 +107,6 @@ import Input from '../../../components/UI/Input/Input';
 
         );
     }
-
 }
+
 export default ContactData;
