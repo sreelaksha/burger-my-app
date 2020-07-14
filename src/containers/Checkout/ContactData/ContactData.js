@@ -75,6 +75,20 @@ import Input from '../../../components/UI/Input/Input';
                             })
      }
 
+     inputChangeHandler = (event ,inputIdentifier) => {
+        //console.log(inputIdentifier);
+        const updatedOrderForm = {
+                ...this.state.orderForm
+                };
+                const updatedFormElement= {
+                    ...updatedOrderForm[inputIdentifier]
+                };
+                //console.log(updatedFormItems);
+                updatedFormElement.value = event.target.value;
+                updatedOrderForm[inputIdentifier] = updatedFormElement ;
+                this.setState({orderForm: updatedOrderForm})
+     }
+
     render(){
         const formElementArray = [];
         for(let key in this.state.orderForm){
@@ -88,9 +102,11 @@ import Input from '../../../components/UI/Input/Input';
             <form>
                     {formElementArray.map(formElement => (
                        <Input
+                            key = {formElement.id}
                             elementType = {formElement.config.elementType}
                             elementConfig = {formElement.config.elementConfig}
-                            value = {formElement.config.value} />
+                            value = {formElement.config.value}
+                            changed = {(event) => this.inputChangeHandler(event, formElement.id)}/>
                     ))}
                     <Button btnType = "Success" clicked = {this.orderConfirmedHandler} > ORDER </Button>
             </form>
