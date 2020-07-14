@@ -146,6 +146,7 @@ import Input from '../../../components/UI/Input/Input';
                             elementType = {formElement.config.elementType}
                             elementConfig = {formElement.config.elementConfig}
                             value = {formElement.config.value}
+                            invalid= {!formElement.config.valid}
                             changed = {(event) => this.inputChangeHandler(event, formElement.id)}/>
                     ))}
                     <Button btnType = "Success" > ORDER </Button>
