@@ -4,6 +4,7 @@ import axios from '../../../axios-orders';
 import Button from '../../../components/UI/Button/Button';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import styles from './ContactData.module.css';
+import Input from '../../../components/UI/Input/Input';
 
 //import Checkout from '../Checkout';
 
@@ -48,10 +49,10 @@ import styles from './ContactData.module.css';
 
         let form = (
             <form>
-                    <input className = {styles.Input} type = 'text' name= 'name' placeholder = 'Your name'/>
-                    <input className = {styles.Input} type = 'email' name= 'email' placeholder = 'Your email'/>
-                    <input className = {styles.Input} type = 'text' name= 'street' placeholder = 'Street'/>
-                    <input className = {styles.Input} type = 'text' name= 'postalCode' placeholder = 'Postal Code'/>
+                    <Input inputType ="input" type = 'text' name= 'name' placeholder = 'Your name'/>
+                    <Input inputType = "input" type = 'email' name= 'email' placeholder = 'Your email'/>
+                    <Input inputType = "input" type = 'text' name= 'street' placeholder = 'Street'/>
+                    <Input inputType= "input" type = 'text' name= 'postalCode' placeholder = 'Postal Code'/>
                     <Button btnType = "Success" clicked = {this.orderConfirmedHandler} > ORDER </Button>
             </form>
         );
