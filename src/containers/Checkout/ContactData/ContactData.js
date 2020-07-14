@@ -60,9 +60,14 @@ import Input from '../../../components/UI/Input/Input';
      orderConfirmedHandler = (event) => {
             event.preventDefault();
             this.setState({loading : true})
+            let formData = {};
+                for(let formElementIdentifier in this.state.orderForm){
+                    formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
+                }
                        const order = {
                                 ingredients : this.props.ingredients,
                                 price : this.props.price,
+                                orderData: formData,
 
                        }
                         axios.post('/orders.json ' , order)
@@ -99,7 +104,7 @@ import Input from '../../../components/UI/Input/Input';
         }
 
         let form = (
-            <form>
+            <form onSubmit = {this.orderConfirmedHandler}>
                     {formElementArray.map(formElement => (
                        <Input
                             key = {formElement.id}
@@ -108,7 +113,7 @@ import Input from '../../../components/UI/Input/Input';
                             value = {formElement.config.value}
                             changed = {(event) => this.inputChangeHandler(event, formElement.id)}/>
                     ))}
-                    <Button btnType = "Success" clicked = {this.orderConfirmedHandler} > ORDER </Button>
+                    <Button btnType = "Success" > ORDER </Button>
             </form>
         );
         if(this.state.loading){
