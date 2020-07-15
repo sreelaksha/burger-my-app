@@ -74,7 +74,7 @@ import Input from '../../../components/UI/Input/Input';
                                         {value: 'cheapest', displayValue: 'Cheapest'}
                                         ]
                                 },
-                                value: '',
+                                value: 'fastest',
                                 valid: true,
                                 validation: {}
                             },
