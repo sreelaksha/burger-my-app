@@ -76,6 +76,7 @@ import Input from '../../../components/UI/Input/Input';
                                 },
                                 value: '',
                                 valid: true,
+                                validation: {}
                             },
                      },
             loading: false,
@@ -84,6 +85,10 @@ import Input from '../../../components/UI/Input/Input';
 
     checkValidity(value, rules){
         let isValid = true;
+
+        if(!rules){
+            return true;
+        }
 
         if(rules.required){
             isValid = value.trim() !== '' && isValid;
