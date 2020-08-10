@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/my-burger-app/static/css/main.2fb58618.chunk.css",
+    "main.js": "/my-burger-app/static/js/main.c7faeaf0.chunk.js",
+    "main.js.map": "/my-burger-app/static/js/main.c7faeaf0.chunk.js.map",
+    "runtime-main.js": "/my-burger-app/static/js/runtime-main.fa9aa313.js",
+    "runtime-main.js.map": "/my-burger-app/static/js/runtime-main.fa9aa313.js.map",
+    "static/js/2.4c524ab2.chunk.js": "/my-burger-app/static/js/2.4c524ab2.chunk.js",
+    "static/js/2.4c524ab2.chunk.js.map": "/my-burger-app/static/js/2.4c524ab2.chunk.js.map",
+    "index.html": "/my-burger-app/index.html",
+    "precache-manifest.01bb933d49475f1941fe89b9cfc8bf2c.js": "/my-burger-app/precache-manifest.01bb933d49475f1941fe89b9cfc8bf2c.js",
+    "service-worker.js": "/my-burger-app/service-worker.js",
+    "static/css/main.2fb58618.chunk.css.map": "/my-burger-app/static/css/main.2fb58618.chunk.css.map",
+    "static/js/2.4c524ab2.chunk.js.LICENSE.txt": "/my-burger-app/static/js/2.4c524ab2.chunk.js.LICENSE.txt",
+    "static/media/burger-logo.png": "/my-burger-app/static/media/burger-logo.b8503d26.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fa9aa313.js",
+    "static/js/2.4c524ab2.chunk.js",
+    "static/css/main.2fb58618.chunk.css",
+    "static/js/main.c7faeaf0.chunk.js"
+  ]
+}
