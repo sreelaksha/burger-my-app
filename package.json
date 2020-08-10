@@ -1,6 +1,6 @@
 {
-  "homepage": "http://sreelaksha.github.io/my-burger-app",
-  "name": "my-app",
+  "homepage": "http://sreelaksha.github.io/burger-my-app",
+  "name": "burger-my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
