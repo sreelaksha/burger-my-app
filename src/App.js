@@ -24,9 +24,9 @@ class App extends Component {
             <div>
                 <Layout>
                     <Switch>
-                        <Route path = "/checkout" component = {Checkout} />
-                        <Route path = "/orders" exact component = {Orders} />
-                        <Route path = "/burger-my-app/" exact component = {BurgerBuilder} />
+                        <Route path = "/burger-my-app/checkout" component = {Checkout} />
+                        <Route path = "/burger-my-app/orders" exact component = {Orders} />
+                        <Route path = "/burger-my-app/builder" exact component = {BurgerBuilder} />
                     </Switch>
                   </Layout>
             </div>
