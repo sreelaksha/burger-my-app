@@ -119,7 +119,7 @@ import Input from '../../../components/UI/Input/Input';
                         axios.post('/orders.json ' , order)
                             .then (response =>{
                                   this.setState({ loading : false })
-                                  this.props.history.replace('/');
+                                  this.props.history.replace('/burger-my-app');
                             })
                             .catch (error => {
                                   this.setState({ loading : false })
