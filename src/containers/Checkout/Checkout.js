@@ -32,7 +32,7 @@ class Checkout extends Component{
     }
 
     checkoutContinueHandler = () => {
-            this.props.history.replace('/checkout/contact-data/');
+            this.props.history.replace('/burger-my-app/checkout/contact-data/');
     }
 
         render(){
